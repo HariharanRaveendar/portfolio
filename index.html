@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hariharan Raveendar — Software Developer</title>
+<meta name="description" content="Hariharan Raveendar — Software Developer, 3x Certified Mendix Advanced Developer, and Node.js/NestJS engineer based in Chennai, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0e17;
+    --ink-soft:#111827;
+    --ink-card:#141c2e;
+    --line:#26324a;
+    --line-soft:#1c2438;
+    --text:#e9e7dc;
+    --text-dim:#8b96ab;
+    --text-faint:#5b6579;
+    --accent:#e8a33d;
+    --accent-soft:#e8a33d1a;
+    --cyan:#5fd0c6;
+    --cyan-soft:#5fd0c61a;
+    --radius:14px;
+    --maxw:1140px;
+    --serif:'Manrope',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--text);
+    font-family:var(--serif);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  #net{
+    position:fixed; inset:0; z-index:0; opacity:.55; pointer-events:none;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:48px 48px;
+    opacity:0.3;
+    pointer-events:none;
+    z-index:0;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 75%);
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--cyan);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 14px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--cyan);display:inline-block;}
+  h1,h2,h3{font-family:var(--serif); font-weight:800; letter-spacing:-0.02em; margin:0;}
+  p{color:var(--text-dim);}
+
+  /* ---------- PROGRESS BAR ---------- */
+  #progressBar{
+    position:fixed; top:0; left:0; height:3px; width:0%;
+    background:linear-gradient(90deg, var(--cyan), var(--accent));
+    z-index:80; box-shadow:0 0 12px var(--cyan);
+    transition:width .1s linear;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,14,23,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-brand{
+    font-family:var(--mono); font-size:14px; font-weight:600; color:var(--text);
+    text-decoration:none; letter-spacing:0.02em;
+    display:flex; align-items:center; gap:8px;
+  }
+  .nav-brand span{color:var(--accent);}
+  .nav-brand .pulse-dot{width:7px;height:7px;border-radius:50%; background:var(--cyan); box-shadow:0 0 0 0 var(--cyan-soft); animation:ping 2.4s ease-out infinite;}
+  @keyframes ping{
+    0%{box-shadow:0 0 0 0 rgba(95,208,198,0.55);}
+    70%{box-shadow:0 0 0 8px rgba(95,208,198,0);}
+    100%{box-shadow:0 0 0 0 rgba(95,208,198,0);}
+  }
+  .nav-links{display:flex; gap:28px; list-style:none; margin:0; padding:0;}
+  .nav-links a{
+    font-family:var(--mono); font-size:12.5px; text-decoration:none; color:var(--text-dim);
+    text-transform:uppercase; letter-spacing:0.08em;
+    transition:color .2s ease;
+  }
+  .nav-links a:hover{color:var(--cyan);}
+  .nav-cta{
+    font-family:var(--mono); font-size:12px; text-decoration:none;
+    color:var(--ink); background:var(--accent); padding:9px 16px; border-radius:8px;
+    letter-spacing:0.04em; font-weight:600;
+    transition:transform .2s ease, box-shadow .2s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(-1px); box-shadow:0 6px 18px var(--accent-soft);}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:88px 0 60px; position:relative; overflow:hidden;}
+  .hero-grid{display:grid; grid-template-columns:1.25fr 0.95fr; gap:56px; align-items:center;}
+  .hero h1{font-size:clamp(2.4rem, 5vw, 3.7rem); line-height:1.03;}
+  .hero .role{
+    font-family:var(--mono); color:var(--accent); font-size:1.05rem; margin-top:18px; font-weight:500;
+    min-height:1.6em;
+  }
+  .hero .role .cursor-blink{animation:blink 1s step-end infinite; color:var(--cyan);}
+  @keyframes blink{50%{opacity:0;}}
+  .hero .desc{margin-top:18px; font-size:1.05rem; max-width:54ch;}
+  .hero .contact-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px;}
+  .pill{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12.5px; color:var(--text-dim);
+    border:1px solid var(--line); padding:9px 14px; border-radius:100px;
+    text-decoration:none; transition:border-color .2s ease, color .2s ease, transform .2s ease;
+  }
+  .pill:hover{border-color:var(--cyan); color:var(--cyan); transform:translateY(-2px);}
+  .pill svg{width:14px; height:14px; flex-shrink:0;}
+
+  .stats-row{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:40px; padding-top:32px; border-top:1px solid var(--line-soft);}
+  .stat .num{font-family:var(--mono); font-size:1.8rem; font-weight:700; color:var(--text); display:block;}
+  .stat .num .suf{color:var(--accent);}
+  .stat .lbl{font-size:11.5px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.06em; margin-top:4px; display:block;}
+
+  /* hero panel with flow diagram */
+  .hero-panel{
+    background:var(--ink-card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px; position:relative; overflow:hidden;
+    --mx:50%; --my:50%;
+  }
+  .hero-panel::after{
+    content:"";
+    position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(320px circle at var(--mx) var(--my), rgba(95,208,198,0.10), transparent 60%);
+    transition:background .05s linear;
+  }
+  .hero-panel .panel-label{font-family:var(--mono); font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px; position:relative; z-index:2;}
+  .pipeline{position:relative; z-index:2; display:flex; flex-direction:column;}
+  .pipe-step{
+    display:flex; align-items:center; gap:14px;
+    background:var(--ink-soft); border:1px solid var(--line); border-radius:9px;
+    padding:13px 16px;
+  }
+  .pipe-step .pipe-index{
+    font-family:var(--mono); font-size:11px; color:var(--text-faint); width:18px; flex-shrink:0;
+  }
+  .pipe-step .pipe-label{font-family:var(--mono); font-size:13px; color:var(--text); font-weight:500; letter-spacing:0.01em;}
+  .pipe-step .pipe-sub{font-family:var(--mono); font-size:10.5px; color:var(--text-faint); margin-left:auto; white-space:nowrap;}
+  .pipe-step.guard{border-color:#5fd0c655;}
+  .pipe-step.guard .pipe-index{color:var(--cyan);}
+  .pipe-step.end{border-color:#e8a33d55; background:var(--accent-soft);}
+  .pipe-step.end .pipe-index{color:var(--accent);}
+  .pipe-step.end .pipe-label{color:var(--accent);}
+  .pipe-connector{
+    position:relative; width:1px; height:22px; margin-left:26px;
+    background:repeating-linear-gradient(180deg, var(--cyan) 0 4px, transparent 4px 9px);
+    background-size:1px 200%;
+    animation:pipe-flow 2.2s linear infinite;
+  }
+  .pipe-connector::after{
+    content:"";
+    position:absolute; left:50%; bottom:-1px; transform:translateX(-50%);
+    width:0; height:0; border-left:3.5px solid transparent; border-right:3.5px solid transparent;
+    border-top:5px solid var(--text-faint);
+  }
+  @keyframes pipe-flow{0%{background-position-y:0;} 100%{background-position-y:-200%;}}
+
+  .stat-row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line-soft); position:relative; z-index:2;}
+  .stat-row:last-child{border-bottom:none;}
+  .stat-row .k{font-family:var(--mono); font-size:12px; color:var(--text-faint);}
+  .stat-row .v{font-family:var(--mono); font-size:12.5px; color:var(--text); text-align:right;}
+  .node-dot{width:7px; height:7px; border-radius:50%; background:var(--accent); display:inline-block; margin-right:8px; box-shadow:0 0 0 4px var(--accent-soft);}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:84px 0; border-top:1px solid var(--line-soft); position:relative;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.7rem, 3vw, 2.2rem);}
+  .section-head p{margin-top:12px; font-size:1.02rem;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:56px;}
+  .about-grid p{font-size:1.02rem; color:var(--text);}
+  .about-grid p + p{margin-top:16px; color:var(--text-dim);}
+
+  .terminal{background:#0c1017; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:0 20px 50px -20px rgba(0,0,0,0.5);}
+  .terminal-bar{display:flex; align-items:center; gap:8px; padding:11px 14px; background:var(--ink-soft); border-bottom:1px solid var(--line-soft);}
+  .terminal-bar .dot{width:10px;height:10px;border-radius:50%;}
+  .dot.red{background:#e8695f;} .dot.yellow{background:#e8c23d;} .dot.green{background:#5fd082;}
+  .terminal-title{font-family:var(--mono); font-size:11.5px; color:var(--text-faint); margin-left:8px;}
+  .terminal-body{padding:20px; font-family:var(--mono); font-size:13px; color:var(--cyan); min-height:220px; line-height:1.8;}
+  .terminal-body .prompt{color:var(--accent);}
+  .terminal-body .out{color:var(--text-dim); display:block;}
+  .terminal-body .caret{display:inline-block; width:7px; height:14px; background:var(--cyan); vertical-align:middle; margin-left:2px; animation:blink 1s step-end infinite;}
+
+  /* ---------- EXPERIENCE FLOW ---------- */
+  .flow{position:relative; padding-left:36px;}
+  .flow::before{
+    content:"";
+    position:absolute; left:5px; top:6px; bottom:6px; width:2px;
+    background:repeating-linear-gradient(180deg, var(--cyan) 0 8px, transparent 8px 16px);
+    background-size:2px 320%;
+    animation:flow-move 6s linear infinite;
+  }
+  .flow-signal{
+    position:absolute; left:1px; width:10px; height:10px; border-radius:50%;
+    background:var(--accent); box-shadow:0 0 10px 2px var(--accent), 0 0 0 4px var(--accent-soft);
+    animation:signal-travel 5s ease-in-out infinite;
+  }
+  @keyframes signal-travel{
+    0%{top:0%; opacity:0;}
+    8%{opacity:1;}
+    92%{opacity:1;}
+    100%{top:100%; opacity:0;}
+  }
+  @keyframes flow-move{
+    0%{background-position-y:0;}
+    100%{background-position-y:-320%;}
+  }
+  .flow-node{position:relative; padding-bottom:48px;}
+  .flow-node:last-child{padding-bottom:0;}
+  .flow-node::before{
+    content:"";
+    position:absolute; left:-36px; top:4px; width:13px; height:13px;
+    border-radius:4px; background:var(--ink); border:2px solid var(--accent);
+    transform:rotate(45deg);
+    transition:box-shadow .3s ease;
+  }
+  .flow-node.current::before{background:var(--accent); box-shadow:0 0 0 5px var(--accent-soft), 0 0 18px 2px var(--accent);}
+  .fn-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; justify-content:space-between;}
+  .fn-role{font-size:1.2rem; font-weight:700; color:var(--text);}
+  .fn-date{font-family:var(--mono); font-size:12px; color:var(--text-faint); white-space:nowrap;}
+  .fn-org{font-family:var(--mono); font-size:13px; color:var(--accent); margin-top:4px;}
+  .fn-loc{font-size:12.5px; color:var(--text-faint); margin-top:2px;}
+  .fn-desc{margin-top:12px; font-size:14.5px; max-width:64ch;}
+  .fn-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+  .tag{
+    font-family:var(--mono); font-size:11.5px; color:var(--cyan);
+    background:var(--cyan-soft); border:1px solid #5fd0c633; padding:4px 10px; border-radius:6px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .tag:hover{transform:translateY(-2px); box-shadow:0 4px 14px -4px var(--cyan);}
+
+  /* ---------- SKILLS ---------- */
+  .skills-layout{display:grid; grid-template-columns:0.85fr 1.15fr; gap:48px; align-items:center;}
+  .orbit-wrap{position:relative; width:100%; max-width:360px; aspect-ratio:1/1; margin:0 auto;}
+  .orbit-core{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:76px; height:76px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #1c2740, var(--ink-card));
+    border:1px solid var(--cyan); display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:11px; color:var(--cyan); text-align:center; z-index:5;
+    box-shadow:0 0 0 6px rgba(95,208,198,0.06), 0 0 24px rgba(95,208,198,0.25);
+    animation:core-pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes core-pulse{0%,100%{box-shadow:0 0 0 6px rgba(95,208,198,0.06), 0 0 24px rgba(95,208,198,0.25);} 50%{box-shadow:0 0 0 10px rgba(95,208,198,0.1), 0 0 34px rgba(95,208,198,0.4);}}
+  .orbit-ring{position:absolute; border:1px dashed var(--line); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%);}
+  .ring-track{position:absolute; inset:0; animation:spin var(--duration) linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .orbit-item{position:absolute; top:50%; left:50%; width:0; height:0; transform:rotate(var(--angle)) translateX(var(--radius));}
+  .counter-angle{transform:rotate(calc(-1 * var(--angle))); position:absolute; top:0; left:0;}
+  .counter-spin{animation:spin var(--duration) linear infinite reverse;}
+  .orbit-chip{
+    transform:translate(-50%,-50%);
+    font-family:var(--mono); font-size:10.5px; white-space:nowrap; color:var(--text);
+    background:var(--ink-card); border:1px solid var(--line); padding:5px 10px; border-radius:100px;
+    box-shadow:0 4px 14px -6px rgba(0,0,0,0.6);
+  }
+  .orbit-ring:hover .ring-track, .orbit-ring:hover .counter-spin{animation-play-state:paused;}
+
+  .skill-groups{display:grid; grid-template-columns:1fr; gap:18px;}
+  .skill-card{background:var(--ink-card); border:1px solid var(--line); border-radius:var(--radius); padding:22px;}
+  .skill-card h3{font-size:14px; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.06em; color:var(--text); margin-bottom:14px; font-weight:600;}
+  .skill-tags{display:flex; flex-wrap:wrap; gap:9px;}
+  .skill-tag{
+    font-size:13px; color:var(--text-dim); border:1px solid var(--line); padding:6px 12px; border-radius:100px;
+    transition:border-color .2s ease, color .2s ease, transform .2s ease;
+  }
+  .skill-tag:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-2px);}
+
+  /* ---------- PROJECTS ---------- */
+  .project-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; perspective:1000px;}
+  .project-card{
+    background:var(--ink-card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:24px; display:flex; flex-direction:column; gap:12px;
+    transition:border-color .25s ease, transform .1s ease;
+    transform-style:preserve-3d; will-change:transform; position:relative; overflow:hidden;
+  }
+  .project-card::before{
+    content:""; position:absolute; inset:0; opacity:0; pointer-events:none;
+    background:radial-gradient(220px circle at var(--mx,50%) var(--my,50%), rgba(95,208,198,0.14), transparent 60%);
+    transition:opacity .3s ease;
+  }
+  .project-card:hover::before{opacity:1;}
+  .project-card:hover{border-color:var(--cyan);}
+  .project-card .p-org{font-family:var(--mono); font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.06em;}
+  .project-card h3{font-size:17px; margin-top:2px;}
+  .project-card .p-role{font-family:var(--mono); font-size:12px; color:var(--accent);}
+  .project-card p{font-size:13.5px; margin-top:4px;}
+  .project-card .p-date{margin-top:auto; font-family:var(--mono); font-size:11px; color:var(--text-faint); padding-top:10px; border-top:1px solid var(--line-soft);}
+
+  .product-spotlight{
+    display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center;
+    background:linear-gradient(135deg, var(--ink-card), var(--ink-soft));
+    border:1px solid #e8a33e4d; border-radius:var(--radius);
+    padding:28px 30px; margin-bottom:24px; position:relative; overflow:hidden;
+  }
+  .product-spotlight::before{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(400px circle at 15% 20%, rgba(232,163,61,0.10), transparent 60%);
+  }
+  .product-spotlight .ps-badge{
+    display:inline-flex; align-items:center; gap:7px;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--accent); margin-bottom:12px;
+  }
+  .product-spotlight .ps-badge .live-dot{width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 0 rgba(232,163,61,0.6); animation:ping 2s ease-out infinite;}
+  .product-spotlight h3{font-size:1.35rem; position:relative; z-index:1;}
+  .product-spotlight .ps-tagline{font-family:var(--mono); font-size:12.5px; color:var(--accent); margin-top:6px; position:relative; z-index:1;}
+  .product-spotlight p.ps-desc{margin-top:12px; font-size:14.5px; max-width:60ch; position:relative; z-index:1;}
+  .product-spotlight .ps-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; position:relative; z-index:1;}
+  .product-spotlight .ps-cta{
+    position:relative; z-index:1; white-space:nowrap;
+    font-family:var(--mono); font-size:12.5px; text-decoration:none; color:var(--ink);
+    background:var(--accent); padding:11px 20px; border-radius:8px; font-weight:600;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .product-spotlight .ps-cta:hover{transform:translateY(-2px); box-shadow:0 8px 20px var(--accent-soft);}
+  @media (max-width:700px){
+    .product-spotlight{grid-template-columns:1fr;}
+  }
+
+  /* ---------- CERTS / ACHIEVEMENTS ---------- */
+  .cert-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .cert-list{list-style:none; margin:0; padding:0;}
+  .cert-list li{
+    display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px solid var(--line-soft);
+    font-size:14.5px;
+  }
+  .cert-list li:last-child{border-bottom:none;}
+  .cert-list .name{color:var(--text);}
+  .cert-list .org{font-family:var(--mono); font-size:11.5px; color:var(--text-faint); white-space:nowrap; text-align:right;}
+
+  /* ---------- EDUCATION / LANG / INTERESTS ---------- */
+  .low-grid{display:grid; grid-template-columns:1.3fr 0.8fr 0.9fr; gap:40px;}
+  .edu-item{margin-bottom:22px;}
+  .edu-item:last-child{margin-bottom:0;}
+  .edu-item .school{font-weight:700; font-size:15.5px; color:var(--text);}
+  .edu-item .degree{font-size:13.5px; margin-top:4px;}
+  .edu-item .date{font-family:var(--mono); font-size:11.5px; color:var(--text-faint); margin-top:4px;}
+  .lang-item{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line-soft); font-size:14px;}
+  .lang-item:last-child{border-bottom:none;}
+  .lang-item .lvl{font-family:var(--mono); font-size:11.5px; color:var(--text-faint);}
+  .interest-tags{display:flex; flex-wrap:wrap; gap:9px;}
+  .interest-tags span{
+    font-size:13px; color:var(--text-dim); border:1px solid var(--line); padding:6px 12px; border-radius:100px;
+  }
+  .col-label{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--cyan); margin-bottom:18px; display:block;}
+
+  /* ---------- FOOTER / CONTACT ---------- */
+  footer{padding:80px 0 48px; border-top:1px solid var(--line-soft); text-align:center; position:relative; overflow:hidden;}
+  footer h2{font-size:clamp(1.8rem,4vw,2.6rem);}
+  footer p{max-width:48ch; margin:16px auto 0;}
+  .footer-actions{display:flex; justify-content:center; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:13px; text-decoration:none; padding:13px 24px; border-radius:9px;
+    letter-spacing:0.03em; font-weight:600; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn.primary{background:var(--accent); color:var(--ink);}
+  .btn.primary:hover{transform:translateY(-2px); box-shadow:0 8px 22px var(--accent-soft);}
+  .btn.ghost{border:1px solid var(--line); color:var(--text);}
+  .btn.ghost:hover{border-color:var(--cyan); color:var(--cyan);}
+  .fine{margin-top:56px; font-family:var(--mono); font-size:11.5px; color:var(--text-faint);}
+
+  @media (max-width: 860px){
+    .hero-grid, .about-grid, .cert-grid, .low-grid, .skills-layout{grid-template-columns:1fr;}
+    .project-grid{grid-template-columns:1fr 1fr;}
+    .nav-links{display:none;}
+    .stats-row{grid-template-columns:repeat(2,1fr);}
+    .orbit-wrap{max-width:280px;}
+  }
+  @media (max-width: 560px){
+    .project-grid{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+    header.hero{padding:56px 0 48px;}
+    section{padding:56px 0;}
+    .fn-head{flex-direction:column; align-items:flex-start;}
+    .stats-row{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="net" aria-hidden="true"></canvas>
+<div id="progressBar"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand"><span class="pulse-dot"></span>HR<span>.</span>DEV</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+    </ul>
+    <a class="nav-cta" href="mailto:hari2598haran@gmail.com">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Software Developer — Low-Code &amp; Node.js</p>
+      <h1>Hariharan<br>Raveendar</h1>
+      <p class="role"><span id="typedRole"></span><span class="cursor-blink">|</span></p>
+      <p class="desc">I design microflows and ship backend systems. Five years building enterprise applications on Mendix for clients across the UAE, Bahrain and India — now moving into full-stack development with Node.js, NestJS and Prisma.</p>
+      <div class="contact-row">
+        <a class="pill" href="mailto:hari2598haran@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          hari2598haran@gmail.com
+        </a>
+        <a class="pill" href="tel:+918015171062">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          +91 80151 71062
+        </a>
+        <a class="pill" href="https://www.linkedin.com/in/hariharan-raveendar-95640b133/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1s2.5 1.12 2.5 2.5zM.22 8.24h4.56V23H.22V8.24zM8.27 8.24h4.37v2.01h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V23h-4.56v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23H8.27V8.24z"/></svg>
+          LinkedIn
+        </a>
+        <span class="pill" style="cursor:default;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Chennai, India
+        </span>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat"><span class="num" data-target="5" data-suffix="+">0</span><span class="lbl">Years Experience</span></div>
+        <div class="stat"><span class="num" data-target="3" data-suffix="&times;">0</span><span class="lbl">Mendix Advanced Certified</span></div>
+        <div class="stat"><span class="num" data-target="6" data-suffix="+">0</span><span class="lbl">Enterprise Projects</span></div>
+        <div class="stat"><span class="num" data-target="4" data-suffix="">0</span><span class="lbl">Countries Served</span></div>
+      </div>
+    </div>
+
+    <div class="hero-panel reveal" id="heroPanel">
+      <div class="panel-label">Request lifecycle — current stack</div>
+      <div class="pipeline">
+        <div class="pipe-step">
+          <span class="pipe-index">01</span>
+          <span class="pipe-label">Client Request</span>
+          <span class="pipe-sub">HTTPS</span>
+        </div>
+        <div class="pipe-connector"></div>
+        <div class="pipe-step guard">
+          <span class="pipe-index">02</span>
+          <span class="pipe-label">Auth Guard</span>
+          <span class="pipe-sub">JWT</span>
+        </div>
+        <div class="pipe-connector"></div>
+        <div class="pipe-step">
+          <span class="pipe-index">03</span>
+          <span class="pipe-label">NestJS Service</span>
+          <span class="pipe-sub">Controller</span>
+        </div>
+        <div class="pipe-connector"></div>
+        <div class="pipe-step">
+          <span class="pipe-index">04</span>
+          <span class="pipe-label">Prisma ORM</span>
+          <span class="pipe-sub">PostgreSQL</span>
+        </div>
+        <div class="pipe-connector"></div>
+        <div class="pipe-step end">
+          <span class="pipe-index">05</span>
+          <span class="pipe-label">Response</span>
+          <span class="pipe-sub">200 OK</span>
+        </div>
+      </div>
+
+      <div class="panel-label" style="margin-top:16px;">Current position</div>
+      <div class="stat-row"><span class="k"><span class="node-dot"></span>Role</span><span class="v">Software Developer</span></div>
+      <div class="stat-row"><span class="k">Company</span><span class="v">InnoVites</span></div>
+      <div class="stat-row"><span class="k">Since</span><span class="v">March 2025</span></div>
+      <div class="stat-row"><span class="k">Education</span><span class="v">MCA, Anna University</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">About</p>
+      <h2>From microflows to backend services</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I'm an MCA graduate from the College of Engineering, Guindy (Anna University), and a 3x Certified Mendix Advanced Developer with over five years of experience building and customizing enterprise applications on the Mendix low-code platform.</p>
+        <p>My work spans application modelling, microflow design, custom widgets, and integrating external systems — SSO, LDAP, SAP, OData, field and file encryption, and payment gateways among them — for clients including government departments in the UAE, a bank in Bahrain, and a refinery in India.</p>
+        <p>Lately I've been moving into full-stack development with Node.js, NestJS, Prisma, and PostgreSQL — debugging production infrastructure, working with object storage (MinIO) and search (OpenSearch), and building backend services that scale. I thrive in collaborative environments and enjoy partnering with stakeholders to turn a request into a working system.</p>
+      </div>
+      <div class="reveal">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">hariharan@dev — zsh</span>
+          </div>
+          <div class="terminal-body" id="terminalBody"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Experience</p>
+      <h2>Career timeline</h2>
+      <p>Four roles, drawn as a flow — the way a Mendix microflow traces execution from start to current state.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-signal"></div>
+      <div class="flow-node reveal">
+        <div class="fn-head">
+          <div><div class="fn-role">Web Application Developer</div><div class="fn-org">Onstep Technologies · Internship</div></div>
+          <div class="fn-date">Feb 2021 – May 2021</div>
+        </div>
+        <div class="fn-loc">India · On-site</div>
+        <p class="fn-desc">First hands-on role building web applications, working across the frontend with React and React Native.</p>
+        <div class="fn-tags"><span class="tag">React</span><span class="tag">React.js</span><span class="tag">React Native</span></div>
+      </div>
+
+      <div class="flow-node reveal">
+        <div class="fn-head">
+          <div><div class="fn-role">Software Engineer</div><div class="fn-org">RapidData Technologies</div></div>
+          <div class="fn-date">Jan 2022 – Jun 2024 · 2 yrs 6 mos</div>
+        </div>
+        <div class="fn-loc">Chennai, Tamil Nadu, India</div>
+        <p class="fn-desc">Two and a half years as a Mendix developer, leading builds for government and municipal clients — application models, microflows, and integrations with email, SMS, REST APIs, payment processing, SSO, LDAP, and field/file encryption.</p>
+        <div class="fn-tags"><span class="tag">Mendix 8/9/10</span><span class="tag">Siemens Low-Code</span><span class="tag">SQL</span><span class="tag">REST APIs</span><span class="tag">SSO / LDAP</span></div>
+      </div>
+
+      <div class="flow-node reveal">
+        <div class="fn-head">
+          <div><div class="fn-role">Software Engineer</div><div class="fn-org">Labyrinth Global Solutions (USA · UK · UAE · India)</div></div>
+          <div class="fn-date">Jun 2024 – Feb 2025 · 9 mos</div>
+        </div>
+        <div class="fn-loc">Hyderabad, Telangana, India · On-site</div>
+        <p class="fn-desc">Stepped into a team lead role on Mendix, delivering a loan and credit-card management system for a bank in Bahrain, and a contract management platform plus employee mobile app for a refinery client in India.</p>
+        <div class="fn-tags"><span class="tag">Mendix</span><span class="tag">Mendix Native</span><span class="tag">SAP Integration</span><span class="tag">OTP Auth</span><span class="tag">OData</span></div>
+      </div>
+
+      <div class="flow-node current reveal">
+        <div class="fn-head">
+          <div><div class="fn-role">Software Developer</div><div class="fn-org">InnoVites</div></div>
+          <div class="fn-date">Mar 2025 – Present</div>
+        </div>
+        <div class="fn-loc">Chennai, Tamil Nadu, India</div>
+        <p class="fn-desc">Building and maintaining backend services for <strong style="color:var(--text);">cableCORE DesignCenter</strong> — InnoVites' AI-assisted cable design and product data platform for wire &amp; cable manufacturers. Working on a Node.js/NestJS stack with Prisma ORM over PostgreSQL, object storage with MinIO, and search with OpenSearch, including diagnosing production infrastructure issues end to end.</p>
+        <div class="fn-tags"><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Prisma ORM</span><span class="tag">PostgreSQL</span><span class="tag">MinIO</span><span class="tag">OpenSearch</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Skills</p>
+      <h2>Toolkit</h2>
+    </div>
+    <div class="skills-layout">
+      <div class="orbit-wrap reveal">
+        <div class="orbit-core">CORE<br>STACK</div>
+        <div class="orbit-ring" style="width:200px; height:200px;">
+          <div class="ring-track" style="--duration:26s;">
+            <div class="orbit-item" style="--angle:0deg; --radius:100px;"><div class="counter-angle"><div class="counter-spin" style="--duration:26s;"><div class="orbit-chip">Node.js</div></div></div></div>
+            <div class="orbit-item" style="--angle:90deg; --radius:100px;"><div class="counter-angle"><div class="counter-spin" style="--duration:26s;"><div class="orbit-chip">NestJS</div></div></div></div>
+            <div class="orbit-item" style="--angle:180deg; --radius:100px;"><div class="counter-angle"><div class="counter-spin" style="--duration:26s;"><div class="orbit-chip">Prisma</div></div></div></div>
+            <div class="orbit-item" style="--angle:270deg; --radius:100px;"><div class="counter-angle"><div class="counter-spin" style="--duration:26s;"><div class="orbit-chip">PostgreSQL</div></div></div></div>
+          </div>
+        </div>
+        <div class="orbit-ring" style="width:320px; height:320px;">
+          <div class="ring-track" style="--duration:40s; animation-direction:reverse;">
+            <div class="orbit-item" style="--angle:45deg; --radius:160px;"><div class="counter-angle"><div class="counter-spin" style="--duration:40s; animation-direction:normal;"><div class="orbit-chip">Mendix</div></div></div></div>
+            <div class="orbit-item" style="--angle:135deg; --radius:160px;"><div class="counter-angle"><div class="counter-spin" style="--duration:40s; animation-direction:normal;"><div class="orbit-chip">React</div></div></div></div>
+            <div class="orbit-item" style="--angle:225deg; --radius:160px;"><div class="counter-angle"><div class="counter-spin" style="--duration:40s; animation-direction:normal;"><div class="orbit-chip">TypeScript</div></div></div></div>
+            <div class="orbit-item" style="--angle:315deg; --radius:160px;"><div class="counter-angle"><div class="counter-spin" style="--duration:40s; animation-direction:normal;"><div class="orbit-chip">OpenSearch</div></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-groups">
+        <div class="skill-card reveal">
+          <h3>Backend &amp; Data</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">TypeScript</span><span class="skill-tag">Node.js</span><span class="skill-tag">NestJS</span>
+            <span class="skill-tag">Prisma ORM</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MinIO</span>
+            <span class="skill-tag">OpenSearch</span><span class="skill-tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Low-Code Platform</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Mendix 8, 9 &amp; 10</span><span class="skill-tag">Mendix Native</span>
+            <span class="skill-tag">Siemens Mendix Low-Code</span><span class="skill-tag">Microflow Design</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Frontend &amp; Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span><span class="skill-tag">React Native</span><span class="skill-tag">Angular</span>
+            <span class="skill-tag">JavaScript</span><span class="skill-tag">HTML5</span><span class="skill-tag">CSS</span>
+            <span class="skill-tag">Java</span><span class="skill-tag">Python</span><span class="skill-tag">Git</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Projects</p>
+      <h2>Featured work</h2>
+      <p>Enterprise applications led end-to-end — from application model to production integrations.</p>
+    </div>
+
+    <div class="product-spotlight reveal">
+      <div>
+        <div class="ps-badge"><span class="live-dot"></span>Current product · InnoVites</div>
+        <h3>cableCORE DesignCenter</h3>
+        <div class="ps-tagline">Smarter cable designs. Faster quotes. Stronger collaboration.</div>
+        <p class="ps-desc">An AI-assisted cable design and product data platform for wire &amp; cable manufacturers, connecting faster inquiry-to-quote cycles with better downstream engineering execution — automated design generation, BOM management, real-time costing, and technical datasheet generation, integrated with ERP, MES, and CRM systems. I work on the backend team building the services that power it.</p>
+        <div class="ps-tags"><span class="tag">NestJS</span><span class="tag">Prisma ORM</span><span class="tag">PostgreSQL</span><span class="tag">MinIO</span><span class="tag">OpenSearch</span></div>
+      </div>
+      <a class="ps-cta" href="https://www.innovites.com/cable-design-software" target="_blank" rel="noopener">View Product ↗</a>
+    </div>
+
+    <div class="project-grid">
+
+      <div class="project-card tilt reveal">
+        <div class="p-org">Mangalore Refinery &amp; Petrochemicals Ltd.</div>
+        <h3>Contract Management System</h3>
+        <div class="p-role">Team Lead / Developer</div>
+        <p>Specialized roles for tracking vendor and contract-employee data, mapping employees to work orders, with email, SAP, and OData integration for seamless data exchange.</p>
+        <div class="p-date">Aug 2024 – Present</div>
+      </div>
+
+      <div class="project-card tilt reveal">
+        <div class="p-org">Mangalore Refinery &amp; Petrochemicals Ltd.</div>
+        <h3>MRPL Connect</h3>
+        <div class="p-role">Team Lead / Developer</div>
+        <p>Mobile app for medical claims and petrol allowances, with SAP authentication, OTP-verified transactions, a map of authorized petrol pumps, and an HR web module.</p>
+        <div class="p-date">Aug 2024 – Present</div>
+      </div>
+
+      <div class="project-card tilt reveal">
+        <div class="p-org">Khaleeji Bank, Bahrain</div>
+        <h3>KHCB Collection Systems</h3>
+        <div class="p-role">Team Lead / Developer</div>
+        <p>Consumer loan and credit card management system with automated reminders, MIS and trend reports, and daily overdue alerts to boost operational efficiency.</p>
+        <div class="p-date">Jun 2024 – Aug 2024</div>
+      </div>
+
+      <div class="project-card tilt reveal">
+        <div class="p-org">Dept. of Finance, Abu Dhabi</div>
+        <h3>Chairman Operation Office</h3>
+        <div class="p-role">Mendix Lead Developer</div>
+        <p>Specialized-role system for tracking and monitoring requests, with email, SSO, field and file encryption, and LDAP integrations.</p>
+        <div class="p-date">Jun 2023 – Jun 2024</div>
+      </div>
+
+      <div class="project-card tilt reveal">
+        <div class="p-org">Dept. of Finance, Abu Dhabi</div>
+        <h3>Resolution Automation</h3>
+        <div class="p-role">Mendix Lead Developer</div>
+        <p>Verifies and maintains Resolution Requests raised across sectors and monitored by management, with SSO, encryption, deep linking, and LDAP.</p>
+        <div class="p-date">Sep 2023 – Jun 2024</div>
+      </div>
+
+      <div class="project-card tilt reveal">
+        <div class="p-org">Dubai Municipality</div>
+        <h3>AMAF</h3>
+        <div class="p-role">Mendix Developer</div>
+        <p>Fundraising platform spanning five distinct services, integrating email, SMS, REST APIs, payment processing, and UAE Pass.</p>
+        <div class="p-date">Jan 2022 – Apr 2023</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Credentials</p>
+      <h2>Certifications &amp; achievements</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="reveal">
+        <span class="col-label">Certifications</span>
+        <ul class="cert-list">
+          <li><span class="name">Mendix Advanced Developer (×3, 2023)</span><span class="org">Mendix</span></li>
+          <li><span class="name">Mendix Intermediate Developer</span><span class="org">Mendix</span></li>
+          <li><span class="name">The Complete 2021 Web Development Bootcamp</span><span class="org">Udemy</span></li>
+          <li><span class="name">Programming in JavaScript Essentials</span><span class="org">LetsUpgrade</span></li>
+          <li><span class="name">Essentials Program in React JS</span><span class="org">LetsUpgrade</span></li>
+          <li><span class="name">JavaScript (Basic)</span><span class="org">HackerRank</span></li>
+          <li><span class="name">Python (Basic)</span><span class="org">HackerRank</span></li>
+          <li><span class="name">Problem Solving (Basic)</span><span class="org">HackerRank</span></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <span class="col-label">Achievements</span>
+        <ul class="cert-list">
+          <li><span class="name">Silver Badge — Python Programming Language</span><span class="org">HackerRank</span></li>
+          <li><span class="name">Golden Badge — 10 Days of JavaScript</span><span class="org">HackerRank</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="low-grid">
+      <div class="reveal">
+        <span class="col-label">Education</span>
+        <div class="edu-item">
+          <div class="school">College of Engineering, Guindy</div>
+          <div class="degree">Master of Computer Applications (MCA), Anna University — CGPA 8.535</div>
+          <div class="date">Jul 2019 – Jul 2022</div>
+        </div>
+        <div class="edu-item">
+          <div class="school">SRMV College of Arts and Science</div>
+          <div class="degree">Bachelor of Computer Applications (BCA)</div>
+          <div class="date">2015 – 2018</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="col-label">Languages</span>
+        <div class="lang-item"><span>English</span><span class="lvl">Full professional</span></div>
+        <div class="lang-item"><span>Tamil</span><span class="lvl">Native / bilingual</span></div>
+      </div>
+      <div class="reveal">
+        <span class="col-label">Interests</span>
+        <div class="interest-tags">
+          <span>Problem Solving</span><span>Web Development</span><span>Traveling</span><span>Video Games</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center;">Get in touch</p>
+    <h2>Building something on Mendix<br>or Node.js?</h2>
+    <p>I'm always open to a conversation about backend systems, low-code platforms, or the space in between. Based in Chennai — working with teams anywhere.</p>
+    <div class="footer-actions">
+      <a class="btn primary" href="mailto:hari2598haran@gmail.com">hari2598haran@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/hariharan-raveendar-95640b133/" target="_blank" rel="noopener">View LinkedIn</a>
+      <a class="btn ghost" href="tel:+918015171062">+91 80151 71062</a>
+    </div>
+    <p class="fine">Hariharan Raveendar · Chennai, Tamil Nadu, India</p>
+  </div>
+</footer>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reveal on scroll */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* Scroll progress bar */
+  const progressBar = document.getElementById('progressBar');
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+  }
+  document.addEventListener('scroll', updateProgress, { passive:true });
+  updateProgress();
+
+  /* Typewriter cycling roles */
+  const roles = ['Mendix Advanced Developer', 'Node.js / NestJS Engineer', 'Low-Code Solutions Architect'];
+  const typedEl = document.getElementById('typedRole');
+  if (reduceMotion) {
+    typedEl.textContent = roles[0];
+  } else {
+    let ri = 0, ci = 0, deleting = false;
+    function tick(){
+      const word = roles[ri];
+      if (!deleting) {
+        ci++;
+        typedEl.textContent = word.slice(0, ci);
+        if (ci === word.length) { deleting = true; setTimeout(tick, 1500); return; }
+      } else {
+        ci--;
+        typedEl.textContent = word.slice(0, ci);
+        if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+      }
+      setTimeout(tick, deleting ? 35 : 65);
+    }
+    tick();
+  }
+
+  /* Animated counters */
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const nums = entry.target.querySelectorAll('.num');
+      nums.forEach(num => {
+        const target = parseInt(num.getAttribute('data-target'), 10);
+        const suffix = num.getAttribute('data-suffix') || '';
+        if (reduceMotion) { num.innerHTML = target + '<span class="suf">' + suffix + '</span>'; return; }
+        let cur = 0;
+        const duration = 1100;
+        const start = performance.now();
+        function step(now){
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          cur = Math.round(eased * target);
+          num.innerHTML = cur + '<span class="suf">' + suffix + '</span>';
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+      counterObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.stats-row').forEach(el => counterObserver.observe(el));
+
+  /* Terminal typing effect */
+  const termLines = [
+    { type:'cmd', text:'whoami' },
+    { type:'out', text:'hariharan-raveendar — software developer' },
+    { type:'cmd', text:'cat stack.txt' },
+    { type:'out', text:'node.js · nestjs · prisma · postgresql' },
+    { type:'out', text:'mendix 8/9/10 · react · typescript' },
+    { type:'cmd', text:'cat status.txt' },
+    { type:'out', text:'open to backend & low-code opportunities' }
+  ];
+  const termBody = document.getElementById('terminalBody');
+  let termStarted = false;
+  const termObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !termStarted) {
+        termStarted = true;
+        if (reduceMotion) {
+          termBody.innerHTML = termLines.map(l => l.type === 'cmd'
+            ? '<span class="prompt">$</span> ' + l.text
+            : '<span class="out">' + l.text + '</span>').join('<br>');
+        } else {
+          typeTerminal();
+        }
+        termObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  if (termBody) termObserver.observe(termBody);
+
+  function typeTerminal(){
+    let li = 0;
+    function nextLine(){
+      if (li >= termLines.length) return;
+      const line = termLines[li];
+      const lineEl = document.createElement('div');
+      if (line.type === 'cmd') {
+        lineEl.innerHTML = '<span class="prompt">$</span> <span class="cmdtext"></span><span class="caret"></span>';
+        termBody.appendChild(lineEl);
+        const cmdSpan = lineEl.querySelector('.cmdtext');
+        const caret = lineEl.querySelector('.caret');
+        let ci = 0;
+        (function typeChar(){
+          if (ci <= line.text.length) {
+            cmdSpan.textContent = line.text.slice(0, ci);
+            ci++;
+            setTimeout(typeChar, 45);
+          } else {
+            caret.remove();
+            li++;
+            setTimeout(nextLine, 250);
+          }
+        })();
+      } else {
+        lineEl.innerHTML = '<span class="out">' + line.text + '</span>';
+        termBody.appendChild(lineEl);
+        li++;
+        setTimeout(nextLine, 220);
+      }
+    }
+    nextLine();
+  }
+
+  /* Hero panel cursor spotlight */
+  const heroPanel = document.getElementById('heroPanel');
+  if (heroPanel && !reduceMotion) {
+    heroPanel.addEventListener('mousemove', (e) => {
+      const rect = heroPanel.getBoundingClientRect();
+      heroPanel.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+      heroPanel.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+    });
+  }
+
+  /* Project card tilt + spotlight */
+  if (!reduceMotion) {
+    document.querySelectorAll('.project-card.tilt').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = e.clientX - r.left, y = e.clientY - r.top;
+        const rx = ((y / r.height) - 0.5) * -8;
+        const ry = ((x / r.width) - 0.5) * 8;
+        card.style.transform = 'rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-3px)';
+        card.style.setProperty('--mx', x + 'px');
+        card.style.setProperty('--my', y + 'px');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0) rotateY(0) translateY(0)';
+      });
+    });
+  }
+
+  /* Network canvas background */
+  const canvas = document.getElementById('net');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+  const PARTICLE_COUNT = 55;
+  const LINK_DIST = 130;
+
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = Math.max(window.innerHeight, document.body.scrollHeight * 0.6);
+  }
+  function initParticles(){
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25
+      });
+    }
+  }
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(95,208,198,0.55)';
+      ctx.fill();
+    }
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const a = particles[i], b = particles[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < LINK_DIST) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = 'rgba(95,208,198,' + (0.12 * (1 - dist / LINK_DIST)) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+    if (!reduceMotion) requestAnimationFrame(draw);
+  }
+  resize();
+  initParticles();
+  window.addEventListener('resize', () => { resize(); initParticles(); });
+  draw();
+</script>
+
+</body>
+</html>
