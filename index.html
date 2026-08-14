@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hariharan Raveendar — Software Developer</title>
 <meta name="description" content="Hariharan Raveendar — Software Developer, 3x Certified Mendix Advanced Developer, and Node.js/NestJS engineer based in Chennai, India.">
+<meta property="og:title" content="Hariharan Raveendar — Software Developer">
+<meta property="og:description" content="3x Certified Mendix Advanced Developer and Node.js/NestJS engineer based in Chennai, India.">
+<meta property="og:image" content="assets/skills-banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/skills-banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -196,6 +201,17 @@
   .stat-row .k{font-family:var(--mono); font-size:12px; color:var(--text-faint);}
   .stat-row .v{font-family:var(--mono); font-size:12.5px; color:var(--text); text-align:right;}
   .node-dot{width:7px; height:7px; border-radius:50%; background:var(--accent); display:inline-block; margin-right:8px; box-shadow:0 0 0 4px var(--accent-soft);}
+
+  .profile-photo-wrap{display:flex; justify-content:center; margin-bottom:18px; position:relative; z-index:2;}
+  .profile-photo{
+    width:96px; height:96px; border-radius:50%; object-fit:cover;
+    border:2px solid var(--cyan); box-shadow:0 0 0 5px rgba(95,208,198,0.10), 0 8px 24px rgba(0,0,0,0.4);
+  }
+
+  .skills-banner{
+    width:100%; border-radius:var(--radius); border:1px solid var(--line); display:block;
+    margin-bottom:32px; box-shadow:0 20px 50px -20px rgba(0,0,0,0.6);
+  }
 
   /* ---------- SECTION GENERIC ---------- */
   section{padding:84px 0; border-top:1px solid var(--line-soft); position:relative;}
@@ -471,6 +487,9 @@
     </div>
 
     <div class="hero-panel reveal" id="heroPanel">
+      <div class="profile-photo-wrap">
+        <img src="assets/profile.jpg" alt="Hariharan Raveendar" class="profile-photo">
+      </div>
       <div class="panel-label">Request lifecycle — current stack</div>
       <div class="pipeline">
         <div class="pipe-step">
@@ -519,6 +538,7 @@
       <p class="eyebrow">About</p>
       <h2>From microflows to backend services</h2>
     </div>
+    <img src="assets/skills-banner.jpg" alt="Mendix Advanced Developer and NestJS Backend Developer — core stack overview" class="skills-banner reveal">
     <div class="about-grid">
       <div class="reveal">
         <p>I'm an MCA graduate from the College of Engineering, Guindy (Anna University), and a 3x Certified Mendix Advanced Developer with over five years of experience building and customizing enterprise applications on the Mendix low-code platform.</p>
