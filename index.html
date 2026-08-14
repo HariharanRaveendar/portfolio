@@ -7,9 +7,9 @@
 <meta name="description" content="Hariharan Raveendar — Software Developer, 3x Certified Mendix Advanced Developer, and Node.js/NestJS engineer based in Chennai, India.">
 <meta property="og:title" content="Hariharan Raveendar — Software Developer">
 <meta property="og:description" content="3x Certified Mendix Advanced Developer and Node.js/NestJS engineer based in Chennai, India.">
-<meta property="og:image" content="assets/skills-banner.jpg">
+<meta property="og:image" content="skills-banner.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="assets/skills-banner.jpg">
+<meta name="twitter:image" content="skills-banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -202,11 +202,18 @@
   .stat-row .v{font-family:var(--mono); font-size:12.5px; color:var(--text); text-align:right;}
   .node-dot{width:7px; height:7px; border-radius:50%; background:var(--accent); display:inline-block; margin-right:8px; box-shadow:0 0 0 4px var(--accent-soft);}
 
-  .profile-photo-wrap{display:flex; justify-content:center; margin-bottom:18px; position:relative; z-index:2;}
-  .profile-photo{
-    width:96px; height:96px; border-radius:50%; object-fit:cover;
-    border:2px solid var(--cyan); box-shadow:0 0 0 5px rgba(95,208,198,0.10), 0 8px 24px rgba(0,0,0,0.4);
+  .profile-banner{
+    position:relative; margin:-22px -22px 18px -22px; height:210px; overflow:hidden;
+    border-radius:13px 13px 0 0;
   }
+  .profile-banner-img{width:100%; height:100%; object-fit:cover; object-position:center 18%; display:block;}
+  .profile-banner-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,14,23,0) 35%, rgba(10,14,23,0.55) 70%, rgba(10,14,23,0.96) 100%);
+    display:flex; flex-direction:column; justify-content:flex-end; padding:16px 18px;
+  }
+  .pb-name{font-family:var(--serif); font-weight:800; font-size:1.15rem; color:var(--text); line-height:1.15;}
+  .pb-role{font-family:var(--mono); font-size:11.5px; color:var(--cyan); margin-top:4px; letter-spacing:0.02em;}
 
   .skills-banner{
     width:100%; border-radius:var(--radius); border:1px solid var(--line); display:block;
@@ -278,6 +285,11 @@
   .fn-loc{font-size:12.5px; color:var(--text-faint); margin-top:2px;}
   .fn-desc{margin-top:12px; font-size:14.5px; max-width:64ch;}
   .fn-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+  .fn-current-grid{display:grid; grid-template-columns:1.25fr 1fr; gap:32px; align-items:start;}
+  .fn-pipeline-card{background:var(--ink-card); border:1px solid var(--line); border-radius:var(--radius); padding:20px;}
+  @media (max-width:900px){
+    .fn-current-grid{grid-template-columns:1fr;}
+  }
   .tag{
     font-family:var(--mono); font-size:11.5px; color:var(--cyan);
     background:var(--cyan-soft); border:1px solid #5fd0c633; padding:4px 10px; border-radius:6px;
@@ -487,43 +499,15 @@
     </div>
 
     <div class="hero-panel reveal" id="heroPanel">
-      <div class="profile-photo-wrap">
-        <img src="assets/profile.jpg" alt="Hariharan Raveendar" class="profile-photo">
-      </div>
-      <div class="panel-label">Request lifecycle — current stack</div>
-      <div class="pipeline">
-        <div class="pipe-step">
-          <span class="pipe-index">01</span>
-          <span class="pipe-label">Client Request</span>
-          <span class="pipe-sub">HTTPS</span>
-        </div>
-        <div class="pipe-connector"></div>
-        <div class="pipe-step guard">
-          <span class="pipe-index">02</span>
-          <span class="pipe-label">Auth Guard</span>
-          <span class="pipe-sub">JWT</span>
-        </div>
-        <div class="pipe-connector"></div>
-        <div class="pipe-step">
-          <span class="pipe-index">03</span>
-          <span class="pipe-label">NestJS Service</span>
-          <span class="pipe-sub">Controller</span>
-        </div>
-        <div class="pipe-connector"></div>
-        <div class="pipe-step">
-          <span class="pipe-index">04</span>
-          <span class="pipe-label">Prisma ORM</span>
-          <span class="pipe-sub">PostgreSQL</span>
-        </div>
-        <div class="pipe-connector"></div>
-        <div class="pipe-step end">
-          <span class="pipe-index">05</span>
-          <span class="pipe-label">Response</span>
-          <span class="pipe-sub">200 OK</span>
+      <div class="profile-banner">
+        <img src="profile.jpg" alt="Hariharan Raveendar" class="profile-banner-img">
+        <div class="profile-banner-overlay">
+          <div class="pb-name">Hariharan Raveendar</div>
+          <div class="pb-role">Software Developer · Chennai, India</div>
         </div>
       </div>
 
-      <div class="panel-label" style="margin-top:16px;">Current position</div>
+      <div class="panel-label">Current position</div>
       <div class="stat-row"><span class="k"><span class="node-dot"></span>Role</span><span class="v">Software Developer</span></div>
       <div class="stat-row"><span class="k">Company</span><span class="v">InnoVites</span></div>
       <div class="stat-row"><span class="k">Since</span><span class="v">March 2025</span></div>
@@ -538,7 +522,7 @@
       <p class="eyebrow">About</p>
       <h2>From microflows to backend services</h2>
     </div>
-    <img src="assets/skills-banner.jpg" alt="Mendix Advanced Developer and NestJS Backend Developer — core stack overview" class="skills-banner reveal">
+    <img src="skills-banner.jpg" alt="Mendix Advanced Developer and NestJS Backend Developer — core stack overview" class="skills-banner reveal">
     <div class="about-grid">
       <div class="reveal">
         <p>I'm an MCA graduate from the College of Engineering, Guindy (Anna University), and a 3x Certified Mendix Advanced Developer with over five years of experience building and customizing enterprise applications on the Mendix low-code platform.</p>
@@ -599,13 +583,51 @@
       </div>
 
       <div class="flow-node current reveal">
-        <div class="fn-head">
-          <div><div class="fn-role">Software Developer</div><div class="fn-org">InnoVites</div></div>
-          <div class="fn-date">Mar 2025 – Present</div>
+        <div class="fn-current-grid">
+          <div>
+            <div class="fn-head">
+              <div><div class="fn-role">Software Developer</div><div class="fn-org">InnoVites</div></div>
+              <div class="fn-date">Mar 2025 – Present</div>
+            </div>
+            <div class="fn-loc">Chennai, Tamil Nadu, India</div>
+            <p class="fn-desc">Building and maintaining backend services for <strong style="color:var(--text);">cableCORE DesignCenter</strong> — InnoVites' AI-assisted cable design and product data platform for wire &amp; cable manufacturers. Working on a Node.js/NestJS stack with Prisma ORM over PostgreSQL, object storage with MinIO, and search with OpenSearch, including diagnosing production infrastructure issues end to end.</p>
+            <div class="fn-tags"><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Prisma ORM</span><span class="tag">PostgreSQL</span><span class="tag">MinIO</span><span class="tag">OpenSearch</span></div>
+          </div>
+          <div class="fn-pipeline-card">
+            <div class="panel-label">Request lifecycle — current stack</div>
+            <div class="pipeline">
+              <div class="pipe-step">
+                <span class="pipe-index">01</span>
+                <span class="pipe-label">Client Request</span>
+                <span class="pipe-sub">HTTPS</span>
+              </div>
+              <div class="pipe-connector"></div>
+              <div class="pipe-step guard">
+                <span class="pipe-index">02</span>
+                <span class="pipe-label">Auth Guard</span>
+                <span class="pipe-sub">JWT</span>
+              </div>
+              <div class="pipe-connector"></div>
+              <div class="pipe-step">
+                <span class="pipe-index">03</span>
+                <span class="pipe-label">NestJS Service</span>
+                <span class="pipe-sub">Controller</span>
+              </div>
+              <div class="pipe-connector"></div>
+              <div class="pipe-step">
+                <span class="pipe-index">04</span>
+                <span class="pipe-label">Prisma ORM</span>
+                <span class="pipe-sub">PostgreSQL</span>
+              </div>
+              <div class="pipe-connector"></div>
+              <div class="pipe-step end">
+                <span class="pipe-index">05</span>
+                <span class="pipe-label">Response</span>
+                <span class="pipe-sub">200 OK</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="fn-loc">Chennai, Tamil Nadu, India</div>
-        <p class="fn-desc">Building and maintaining backend services for <strong style="color:var(--text);">cableCORE DesignCenter</strong> — InnoVites' AI-assisted cable design and product data platform for wire &amp; cable manufacturers. Working on a Node.js/NestJS stack with Prisma ORM over PostgreSQL, object storage with MinIO, and search with OpenSearch, including diagnosing production infrastructure issues end to end.</p>
-        <div class="fn-tags"><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Prisma ORM</span><span class="tag">PostgreSQL</span><span class="tag">MinIO</span><span class="tag">OpenSearch</span></div>
       </div>
     </div>
   </div>
